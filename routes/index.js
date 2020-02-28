@@ -36,15 +36,20 @@ router.get('/category/:id', function (req, res, next) {
       }
     })
     .then(category => {
-      res.render('ID', {
+      if ('ID') {
+      {res.render('ID', {
         category: category
       });
-    });
-});
-
+    }
+    }
+    else {res.render('category/:id', 
+      categoryId, category)
+    }
 /* GET home page. */
-router.get('/', function (req, res, next) {
+ });
+});
+    router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
+     
 module.exports = router;
